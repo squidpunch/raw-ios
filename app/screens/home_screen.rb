@@ -3,7 +3,9 @@ class HomeScreen < PM::Screen
   stylesheet HomeStylesheet
 
   def on_load
-    append(UIButton, :about_button)
+    append(UIButton, :about_button).on(:tap) do
+      open AboutScreen
+    end
     append(UIButton, :faq_button)
     append(UIButton, :rules_button)
     append(UIButton, :races_button)
