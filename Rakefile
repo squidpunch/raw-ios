@@ -5,35 +5,17 @@ require 'motion/project/template/ios'
 require 'bundler'
 Bundler.require
 
-# require 'bubble-wrap'
-
 Motion::Project::App.setup do |app|
-  # Use `rake config' to see complete project settings
+  app.name = 'RAW'
+  app.identifier = 'com.larrabee.raw-ios'
 
-  app.name = 'raw-ios'
-  app.identifier = 'com.your_domain_here.raw-ios'
+  app.short_version = Time.now.to_i.to_s
+  app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
 
-  app.short_version = '0.1.0'
-  # Get version from git
-  #app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
-  app.version = app.short_version
-
-  # SDK 8 for iOS 8 and above
-  # app.sdk_version = '8.1'
-  # app.deployment_target = '8.0'
-
-  # SDK 8 for iOS 7 and above
   app.sdk_version = '8.1'
   app.deployment_target = '7.1'
 
-  # Or for SDK 7
-  # app.sdk_version = '7.1'
-  # app.deployment_target = '7.0'
-
   app.icons = Dir.glob("resources/icon*.png").map{|icon| icon.split("/").last}
-
-  # prerendered_icon is only needed in iOS 6
-  #app.prerendered_icon = true
 
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
@@ -54,15 +36,16 @@ Motion::Project::App.setup do |app|
   # end
   
   app.development do
-    app.codesign_certificate = "iPhone Developer: YOURNAME"
-    app.provisioning_profile = "signing/raw-ios.mobileprovision"
+    app.codesign_certificate = "iPhone Developer: David Larrabee (WY2GF49GM5)"
+    app.provisioning_profile = "signing/raw-ios-development.mobileprovision"
   end
 
   app.release do
+    app.entitlements['beta-reports-active'] = true
     app.entitlements['get-task-allow'] = false
-    app.codesign_certificate = 'iPhone Distribution: YOURNAME'
+    app.codesign_certificate = 'iPhone Distribution: David Larrabee'
     app.provisioning_profile = "signing/raw-ios.mobileprovision"
-    app.seed_id = "YOUR_SEED_ID"
+    # app.seed_id = "YOUR_SEED_ID"
     app.entitlements['application-identifier'] = app.seed_id + '.' + app.identifier
     app.entitlements['keychain-access-groups'] = [ app.seed_id + '.' + app.identifier ]
   end
