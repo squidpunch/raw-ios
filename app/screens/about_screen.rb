@@ -1,5 +1,5 @@
 class AboutScreen < PM::Screen
-  title "About RAW"
+  title "About the RAW Series"
   stylesheet AboutScreenStylesheet
 
   def on_load

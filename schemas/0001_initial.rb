@@ -4,6 +4,14 @@ schema "0001 initial" do
     string :answer, optional: false
   end
 
+  entity "Race" do
+    string :short_name, optional: false
+    string :name, optional: false
+    string :benefit, optional: false
+    datetime :race_date
+    string :website, optional: false
+  end
+
 
   # Examples:
   #

@@ -10,7 +10,9 @@ class HomeScreen < PM::Screen
       open FaqScreen
     end
     append(UIButton, :rules_button)
-    append(UIButton, :races_button)
+    append(UIButton, :races_button).on(:tap) do
+      open RaceListScreen
+    end
   end
 
   def will_animate_rotate(orientation, duration)
