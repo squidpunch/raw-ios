@@ -1,4 +1,9 @@
 schema "0001 initial" do
+  entity "Faq" do
+    string :question, optional: false
+    string :answer, optional: false
+  end
+
 
   # Examples:
   #
