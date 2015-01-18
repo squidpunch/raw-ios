@@ -13,6 +13,9 @@ class HomeScreen < PM::Screen
     append(UIButton, :races_button).on(:tap) do
       open RaceListScreen
     end
+    append(UIButton, :signup_button).on(:tap) do
+      open SignupFormScreen
+    end
   end
 
   def will_animate_rotate(orientation, duration)

@@ -33,6 +33,12 @@ class HomeStylesheet < ApplicationStylesheet
     button_defaults(st)
   end
 
+  def signup_button(st)
+    st.frame = { bp: 5, w: 200, h: 35, centered: :horizontal }
+    st.text = "Signup"
+    button_defaults(st)
+  end
+
   def button_defaults(st)
     st.color = color.white
     st.background_color = color.red
