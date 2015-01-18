@@ -9,7 +9,9 @@ class HomeScreen < PM::Screen
     append(UIButton, :faq_button).on(:tap) do
       open FaqScreen
     end
-    append(UIButton, :rules_button)
+    append(UIButton, :rules_button).on(:tap) do
+      open RulesScreen
+    end
     append(UIButton, :races_button).on(:tap) do
       open RaceListScreen
     end
