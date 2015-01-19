@@ -21,7 +21,7 @@ Swag will be given to all athletes who complete or volunteer at 6 or more events
 
 
     st.color = color.black
-    st.frame = { t: 10, l: 10, w: device_width - 20, h: app_height - 10  }
+    st.frame = { t: 10, l: 10, w: current_width - 20, h: current_height - 10  }
     st.editable = false
   end
 end
