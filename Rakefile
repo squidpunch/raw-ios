@@ -12,7 +12,6 @@ Motion::Project::App.setup do |app|
   app.short_version = Time.now.to_i.to_s
   app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
 
-  app.sdk_version = '8.1'
   app.deployment_target = '7.1'
 
   app.icons = Dir.glob("resources/icon*.png").map{|icon| icon.split("/").last}
