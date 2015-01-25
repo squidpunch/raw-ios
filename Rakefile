@@ -29,13 +29,12 @@ Motion::Project::App.setup do |app|
   # app.vendor_project('vendor/Flurry', :static)
   # app.vendor_project('vendor/DSLCalendarView', :static, :cflags => '-fobjc-arc') # Using arc
   #
-  # app.pods do
-  #   pod 'AFNetworking'
-  #   pod 'JGProgressHUD'
-  #   pod 'SVProgressHUD'
-  #   pod 'JMImageCache'
-  # end
-  
+  app.pods do
+    #   pod 'JGProgressHUD'
+    pod 'SVProgressHUD'
+    #   pod 'JMImageCache'
+  end
+
   app.development do
     app.codesign_certificate = "iPhone Developer: David Larrabee (WY2GF49GM5)"
     app.provisioning_profile = "signing/raw-ios-development.mobileprovision"
