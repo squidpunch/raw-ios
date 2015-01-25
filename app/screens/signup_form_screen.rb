@@ -10,13 +10,13 @@ class SignupFormScreen < PM::FormScreen
       title: "Participant Details",
       footer: %Q~By submitting this form, I agree that road races and trail runs/walks are hazardous and assume all responsibility for all risk or injury that may occurs to me while traveling to, from or while running and attending the listed activities. I hereby for myself, heirs, executors and administrators release and discharge any and all sponsors and all persons associated with the race including the City of Waltham, Doctors Express, Waltham Track Club, Waltham Land Trust, Tim and Kathleen Irving, RAW Series, all volunteers, organizers and sponsors of the races for any injury suffered by me. I attest and certify that I am physically able and sufficiently trained for competition or walking this event. Please be advised In case of a minor, this entry must be signed by parent or guardian of entrant.~,
       cells: [{
-        name: "f_name",
+        name: "first_name",
         title: "First Name",
         type: :text,
         value: "",
         placeholder: "Mit"
       }, {
-        name: "l_name",
+        name: "last_name",
         title: "Last Name",
         type: :text,
         placeholder: "Gnivri"
@@ -26,13 +26,18 @@ class SignupFormScreen < PM::FormScreen
         type: :text,
         placeholder: "Waltham Ma"
       }, {
-        name: "dob",
+        name: "birth_date",
         title: "Birthdate",
         type: :date
       }, {
         name: "email",
         title: "Email",
         type: :email
+      }, {
+        name: "gender",
+        title: "Gender",
+        type: :text,
+        options: [ "Male", "Female" ]
       }, {
         name: "shirt",
         title: "RAW Shirt Size",
@@ -59,6 +64,6 @@ class SignupFormScreen < PM::FormScreen
   end
 
   def save(cell)
-    mp render_form
+    API.save_participant(render_form)
   end
 end
