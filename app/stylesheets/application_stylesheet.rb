@@ -39,7 +39,7 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
 
   def current_width
     if landscape?
-      app_height
+      device_height
     else
       device_width
     end
@@ -49,7 +49,7 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
     if landscape?
       device_width
     else
-      app_height
+      device_height
     end
   end
 end
