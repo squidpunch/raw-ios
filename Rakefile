@@ -14,7 +14,7 @@ Motion::Project::App.setup do |app|
 
   app.deployment_target = '7.1'
 
-  app.icons = Dir.glob("resources/icon*.png").map{|icon| icon.split("/").last}
+  app.icons = Dir.glob("resources/Icon*.png").map{|icon| icon.split("/").last}
 
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
