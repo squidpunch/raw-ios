@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/infinitered/redpotion.git
-  revision: 81cc02a3696e677d188e21da1d5d54e814f5dafa
+  revision: 5fe7a9104db381c2ef70a9bfcb8f43234da9dc9b
   specs:
     redpotion (0.7.0)
       ProMotion (~> 2.2)
