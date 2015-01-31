@@ -33,7 +33,7 @@ Please review the rules and complete and return the participation form found on 
 We've also asked all race directors to offer discounted rates for youths, as well as two under-18 awards categories.  Mark your calendars and bring the kids!"
 ~
     st.color = color.black
-    st.frame = { t: 10, l: 10, w: current_width - 20, h: current_height - 10  }
+    st.frame = { t: 10, l: 10, w: screen_width - 20, h: screen_height - 10  }
     st.editable = false
   end
 

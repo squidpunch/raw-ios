@@ -5,7 +5,10 @@ class HomeStylesheet < ApplicationStylesheet
   end
 
   def scrollable(st)
-    st.frame = { l: 0, t: 0, w: current_width, h: current_height }
+    st.frame = { l: 0, t: 0, w: screen_width, h: screen_height }
+    unless portrait?
+      st.view.contentSize = [0, 500]
+    end
   end
 
   def logo(st)

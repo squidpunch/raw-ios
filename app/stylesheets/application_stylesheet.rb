@@ -36,20 +36,4 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
     st.background_color = color.clear
     st.color = color.black
   end
-
-  def current_width
-    if landscape?
-      device_height
-    else
-      device_width
-    end
-  end
-
-  def current_height
-    if landscape?
-      device_width
-    else
-      device_height
-    end
-  end
 end
