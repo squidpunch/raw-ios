@@ -17,6 +17,9 @@ class HomeScreen < PM::Screen
       s.append(UIButton, :races_button).on(:tap) do
         open RaceListScreen
       end
+      s.append(UIButton, :standings_button).on(:tap) do
+        open StandingsScreen
+      end
       s.append(UIButton, :signup_button).on(:tap) do
         open SignupFormScreen
       end

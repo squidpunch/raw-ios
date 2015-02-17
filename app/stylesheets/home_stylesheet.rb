@@ -6,13 +6,11 @@ class HomeStylesheet < ApplicationStylesheet
 
   def scrollable(st)
     st.frame = { l: 0, t: 0, w: screen_width, h: screen_height }
-    unless portrait?
-      st.view.contentSize = [0, 500]
-    end
+    st.view.contentSize = [0, 575]
   end
 
   def logo(st)
-    st.frame = { t: 70, w: logo_size, h: logo_size, centered: :horizontal }
+    st.frame = { t: 30, w: logo_size, h: logo_size, centered: :horizontal }
     st.image = image.resource("raw-logo")
   end
 
@@ -33,6 +31,11 @@ class HomeStylesheet < ApplicationStylesheet
 
   def races_button(st)
     st.text = "Races"
+    button_defaults(st)
+  end
+
+  def standings_button(st)
+    st.text = "Standings"
     button_defaults(st)
   end
 
